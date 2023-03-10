@@ -1,4 +1,4 @@
-/* Generated on: Thu Mar 09 2023 12:22:41 GMT+0000 (Coordinated Universal Time) */
+/* Generated on: Fri Mar 10 2023 13:10:32 GMT+0000 (Coordinated Universal Time) */
 /* ==========================================================================
    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css 
    ========================================================================== */
@@ -37,7 +37,8 @@ a {
   background-color: #171717;
   background-image: url("https://uploads-ssl.webflow.com/6408bd60045731c9a76555f3/6409c4982ae09626431f4a9d_IMG_20170201_230038%202.png");
   background-position: 0% 50%;
-  background-size: 1280px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container-work {
@@ -52,7 +53,7 @@ a {
 .margin-bottom-24px {
   margin-bottom: 0px;
   font-family: Generalsans, Arial, sans-serif;
-  color: #a9a9a9;
+  color: #aaa;
   font-size: 16px;
   line-height: 23px;
   font-weight: 400;
@@ -89,6 +90,7 @@ a {
 
 .features-paragraph {
   margin-bottom: 24px;
+  color: #aaa;
   font-size: 16px;
   line-height: 165%;
 }
@@ -104,11 +106,26 @@ a {
 .footer-dark {
   position: -webkit-sticky;
   position: sticky;
-  z-index: auto;
+  left: 0%;
+  top: auto;
+  right: 0%;
+  bottom: 0%;
+  display: block;
   padding: 16px 30px;
   float: none;
   clear: none;
-  border-top: 1px solid #323232;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  border-top: 1px none #323232;
   border-bottom: 1px none #e4ebf3;
   background-color: #171717;
 }
@@ -124,12 +141,12 @@ a {
 .heading {
   margin-top: 0px;
   margin-bottom: 0px;
-  padding-bottom: 2px;
+  padding-bottom: 0px;
   font-family: Generalsans, Arial, sans-serif;
   color: #fff;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .container-2 {
@@ -155,9 +172,9 @@ a {
 }
 
 .heading-2 {
-  color: #bebebe;
+  color: #fff;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .link-alt {
@@ -176,7 +193,7 @@ a {
 
 .features-paragraph-copy {
   margin-bottom: 0px;
-  color: #bebebe;
+  color: #aaa;
   font-size: 15px;
   line-height: 165%;
 }
@@ -200,14 +217,14 @@ a {
 
 .heading-2-copy {
   margin-bottom: 24px;
-  color: #bebebe;
+  color: #fff;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .link.work {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .link.work:hover {
@@ -321,6 +338,39 @@ a {
   margin-left: 6px;
 }
 
+.utility-page-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100%;
+  max-width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.utility-page-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 260px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+}
+
 @media screen and (max-width: 991px) {
   .container-work {
     max-width: 640px;
@@ -388,6 +438,10 @@ a {
     padding-bottom: 0px;
   }
 
+  .footer-dark {
+    position: fixed;
+  }
+
   .column {
     margin-bottom: 16px;
   }
@@ -407,6 +461,13 @@ a {
   font-family: 'Generalsans';
   src: url('https://uploads-ssl.webflow.com/6408bd60045731c9a76555f3/6408be228ca9161c8ef326b3_GeneralSans-Regular.woff') format('woff');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Generalsans';
+  src: url('https://uploads-ssl.webflow.com/6408bd60045731c9a76555f3/640b131287a187cfc07b8f0e_GeneralSans-Semibold.woff') format('woff');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
