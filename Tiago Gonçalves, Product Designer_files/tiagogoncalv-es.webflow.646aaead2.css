@@ -347,7 +347,7 @@ pre.w-code-block code {
   white-space: nowrap;
   cursor: pointer;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .1);
-  visibility: visible !important;
+  visibility: hidden !important;
   z-index: 2147483647 !important;
   color: #aaadb0 !important;
   opacity: 1 !important;
@@ -360,7 +360,7 @@ pre.w-code-block code {
   font-size: 12px !important;
   line-height: 14px !important;
   text-decoration: none !important;
-  display: inline-block !important;
+  display: none !important;
   position: fixed !important;
   top: auto !important;
   bottom: 12px !important;
