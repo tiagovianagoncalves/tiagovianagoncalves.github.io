@@ -2191,9 +2191,8 @@ a {
   align-items: baseline;
   padding: 16px 30px;
   display: block;
-  position: -webkit-sticky;
-  position: sticky;
-  top: auto;
+  position: relative;
+  top: 100%;
   bottom: 0%;
   left: 0%;
   right: 0%;
@@ -2401,8 +2400,7 @@ a {
   padding-top: 24px;
   padding-bottom: 24px;
   display: block;
-  position: -webkit-sticky;
-  position: sticky;
+  position: relative;
   top: 100%;
   bottom: 0%;
   left: 0%;
