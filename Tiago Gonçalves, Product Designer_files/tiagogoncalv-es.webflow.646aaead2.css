@@ -2155,8 +2155,11 @@ a {
 .features-list {
   color: #fff;
   border: 1px #000;
+  flex-flow: row;
+  align-items: stretch;
   padding: 32px 30px 0;
   font-family: Generalsans, Arial, sans-serif;
+  display: flex;
   position: relative;
 }
 
@@ -2191,8 +2194,9 @@ a {
   align-items: baseline;
   padding: 16px 30px;
   display: block;
-  position: relative;
-  top: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: auto;
   bottom: 0%;
   left: 0%;
   right: 0%;
@@ -2232,7 +2236,9 @@ a {
 .body {
   color: #1b1b1b;
   background-color: #fff;
+  flex-flow: column wrap;
   font-family: Generalsans, Arial, sans-serif;
+  display: flex;
 }
 
 .heading-2 {
@@ -2400,7 +2406,8 @@ a {
   padding-top: 24px;
   padding-bottom: 24px;
   display: block;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
   top: 100%;
   bottom: 0%;
   left: 0%;
@@ -2434,6 +2441,11 @@ a {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+  }
+  .footer {
+    display: block;
+    position: -webkit-sticky;
+    position: sticky;
   }
 }
 
