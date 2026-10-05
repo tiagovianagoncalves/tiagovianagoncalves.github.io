@@ -47,7 +47,7 @@ const payload = JSON.stringify({ iterations: ITERATIONS, salt: b64(salt), iv: b6
 
 const form = `
     <section class="locked">
-      <a class="back" href="/"><span aria-hidden="true">←</span> Projects</a>
+      <a class="back" href="/"><span aria-hidden="true">←</span> Work</a>
       <h1 class="locked__title">This case study is password protected</h1>
       <p class="locked__text">Enter the password you were given to read it.</p>
       <form class="locked__form" data-unlock>
