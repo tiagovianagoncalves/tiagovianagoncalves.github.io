@@ -1822,7 +1822,6 @@ a.item:hover::before {
   .row--intro > .label {
     order: 2;
     min-height: 0;
-    margin-bottom: -36px;
   }
 
   .row--intro .intro {
@@ -1835,6 +1834,8 @@ a.item:hover::before {
 
   .row--intro .intro__body {
     order: 3;
+    /* 40px row gap minus 28px leaves the same 12px label gap as other sections */
+    margin-top: -28px;
   }
 
   .intro__body,
