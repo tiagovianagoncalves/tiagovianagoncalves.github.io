@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="symbol expanded (edit only in source frame)" clip-path="url(#clip0_0_153)">
+<g id="expanded">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.4 0C4.63269 0 3.2 1.43269 3.2 3.2C1.43269 3.2 0 4.63269 0 6.4V16H9.6C11.3673 16 12.8 14.5673 12.8 12.8H16V6.4C16 2.86538 13.1346 0 9.6 0H6.4ZM12.8 12.8V6.4C12.8 4.63269 11.3673 3.2 9.6 3.2H3.2V9.6C3.2 11.3673 4.63269 12.8 6.4 12.8H12.8Z" fill="#111827"/>
+<path d="M4.8 5.44C4.8 5.08654 5.08654 4.8 5.44 4.8H6.16C6.51346 4.8 6.8 5.08654 6.8 5.44V6.16C6.8 6.51346 6.51346 6.8 6.16 6.8H5.44C5.08654 6.8 4.8 6.51346 4.8 6.16V5.44Z" fill="#111827"/>
+<path d="M8.4 5.44C8.4 5.08654 8.68654 4.8 9.04 4.8H9.76C10.1135 4.8 10.4 5.08654 10.4 5.44V6.16C10.4 6.51346 10.1135 6.8 9.76 6.8H9.04C8.68654 6.8 8.4 6.51346 8.4 6.16V5.44Z" fill="#111827"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_153">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

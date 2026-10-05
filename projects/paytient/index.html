@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paytient · Tiago Gonçalves</title>
+  <meta name="description" content="How I took Paytient from a basic MVP to a full-featured, mobile-first health payments platform, with a design system, user research and a rebrand.">
+  <meta name="color-scheme" content="light only">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="https://tiagogoncalv.es/projects/paytient/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tiagogoncalv.es/projects/paytient/">
+  <meta property="og:title" content="Building the design foundation behind 1M users">
+  <meta property="og:description" content="How I took Paytient from a basic MVP to a full-featured, mobile-first health payments platform, with a design system, user research and a rebrand.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Building the design foundation behind 1M users">
+  <meta name="twitter:description" content="How I took Paytient from a basic MVP to a full-featured, mobile-first health payments platform, with a design system, user research and a rebrand.">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="preload" href="/assets/fonts/Suspiria-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/transitions.js"></script>
+  <script src="/assets/js/menu.js" defer></script>
+  <script src="/assets/js/lightbox.js" defer></script>
+</head>
+<body>
+<div class="page">
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="identity" href="/">
+        <img class="identity__avatar" src="/assets/img/avatar.webp" width="40" height="40" alt="">
+        <span class="identity__text">
+          <span class="identity__name">Tiago Gonçalves</span>
+          <span>Product designer</span>
+        </span>
+      </a>
+      <nav class="nav nav--desktop" aria-label="Main">
+        <a class="nav__link" href="/" aria-current="page">Projects</a>
+        <a class="nav__link" href="/about/">About</a>
+        <a class="nav__link" href="/feed/">Feed</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-open>
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9h16M4 15h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="site-header__inner">
+      <a class="identity" href="/">
+        <img class="identity__avatar" src="/assets/img/avatar.webp" width="40" height="40" alt="">
+        <span class="identity__text">
+          <span class="identity__name">Tiago Gonçalves</span>
+          <span>Product designer</span>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Close menu" data-menu-close>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-menu__links" aria-label="Main">
+      <a class="mobile-menu__link" href="/" aria-current="page">Projects</a>
+      <a class="mobile-menu__link" href="/about/">About</a>
+      <a class="mobile-menu__link" href="/feed/">Feed</a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <a class="link" href="mailto:me@tiagogoncalv.es">me@tiagogoncalv.es</a>
+      <a class="link" href="https://www.linkedin.com/in/tiagovianagoncalves/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="link" href="https://www.figma.com/@tiagogoncalves" target="_blank" rel="noopener">Figma</a>
+      <a class="link" href="https://dribbble.com/tiagovianagoncalves" target="_blank" rel="noopener">Dribbble</a>
+      <a class="link" href="https://x.com/tiagogoncalv_es" target="_blank" rel="noopener">X</a>
+    </div>
+  </div>
+
+  <main class="container case">
+    <!-- Image slots (.ph) are placeholders until the final images arrive. Swap each for:
+         <img src="/assets/img/projects/paytient/NAME.webp" width="W" height="H" alt="..." loading="lazy"> -->
+    <figure class="figure case__cover">
+      <img src="/assets/img/projects/paytient/cover.webp" width="1760" height="1037" alt="Paytient's visual language: type, colour palette, photography, icons and the mobile app home screen" fetchpriority="high">
+    </figure>
+
+    <header class="case__intro">
+      <a class="back" href="/"><span aria-hidden="true">←</span> Projects</a>
+      <h1 class="display">Building the design foundation behind <span class="hl">1M users</span></h1>
+      <p class="case__subtitle">Taking Paytient from a small MVP to a mature, full-featured product.</p>
+    </header>
+
+    <div class="case__body">
+      <section class="case__section">
+        <div class="row">
+          <h2 class="label">Summary</h2>
+          <div class="prose">
+            <ul class="list facts">
+              <li><div class="item"><span class="item__main"><span class="muted">Services</span><span>Product design, Design systems, User research</span></span></div></li>
+              <li><div class="item"><span class="item__main"><span class="muted">Industries</span><span>Healthcare, Fintech</span></span></div></li>
+              <li><div class="item"><span class="item__main"><span class="muted">Date</span><span>Nov 2021 - Jun 2025</span></span></div></li>
+            </ul>
+            <p>I joined Paytient as its first full-time product designer, when the product was a basic MVP, and spent nearly four years turning it into a full-featured, mobile-first platform. I built the design system, ran user research, took the product through a company rebrand, and helped grow the design team from 2 to 5 people.</p>
+          </div>
+        </div>
+
+        <div class="row results-box">
+          <h2 class="label">Results</h2>
+          <ul class="case-stats">
+            <li class="stat">
+              <p class="stat__value">100k <span class="sym sym--inter">→</span> 1M</p>
+              <p class="stat__label">Eligible users</p>
+            </li>
+            <li class="stat">
+              <p class="stat__value">x6</p>
+              <p class="stat__label">Monthly card payments</p>
+            </li>
+            <li class="stat">
+              <p class="stat__value">5 <span class="sym sym--inter">→</span> 2 mins.</p>
+              <p class="stat__label">Time to full onboarding</p>
+            </li>
+          </ul>
+        </div>
+
+        <figure class="figure">
+          <img src="/assets/img/projects/paytient/product-overview.webp" width="2000" height="1607" alt="Paytient app screens: home, rewards, spending summary, transactions, notifications, card details, payments and settings" loading="lazy">
+        </figure>
+      </section>
+
+      <section class="case__section">
+        <div class="row">
+          <h2 class="label">Timeline</h2>
+          <ul class="list timeline">
+            <li><div class="item"><span class="item__when">Late 2021</span><span>Joined as employee #33. The product was a basic MVP with minimal branding and generic UX.</span></div></li>
+            <li><div class="item"><span class="item__when">Early 2022</span><span>Designed and implemented Paytient's first design system.</span></div></li>
+            <li><div class="item"><span class="item__when">Mid 2022</span><span>Ran the first foundational user research and led the first in-person product offsite.</span></div></li>
+            <li><div class="item"><span class="item__when">Late 2022</span><span>Supported a company-wide rebrand and updated the design system and every product visual to match.</span></div></li>
+            <li><div class="item"><span class="item__when">2023 - 2025</span><span>Grew the design team from 2 to 5, expanded the design system, and launched new features and products.</span></div></li>
+          </ul>
+        </div>
+        <figure class="figure">
+          <img src="/assets/img/projects/paytient/2021-vs-2025.webp" width="2000" height="1225" alt="Paytient app in 2021 next to 2025: welcome, card, transactions and transaction detail screens, then the redesigned onboarding, home, summary, transaction details, notifications and settings" loading="lazy">
+        </figure>
+      </section>
+
+      <section class="case__section">
+        <div class="row">
+          <h2 class="label">The challenge</h2>
+          <div class="prose">
+            <p>When I joined, the product had basic functionality and a sparse design language and brand identity. Paytient is a Health Payment Account (HPA) that employers or health plans give to their members, so they can pay for care over time without interest or fees. Three things needed doing at once:</p>
+            <ul class="cards">
+              <li class="card">
+                <span class="principle__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z"/></svg></span>
+                <p>Expand the product's features while consolidating its visual language.</p>
+              </li>
+              <li class="card">
+                <span class="principle__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg></span>
+                <p>Build a scalable, well-documented, mobile-first design system.</p>
+              </li>
+              <li class="card">
+                <span class="principle__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg></span>
+                <p>Set up design workflows that would make scaling and collaboration easier.</p>
+              </li>
+            </ul>
+            <p>That was a lot for one product designer. The only other person sharing the work was a UI designer and front-end developer, and he left a few months later.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case__section">
+        <div class="row">
+          <h2 class="label">Design system</h2>
+          <div class="prose">
+            <p>I'd built design systems at RMS and knok Healthcare, so I knew we needed one to grow in a structured way, on both the design and the implementation side. I also knew a growing system is laborious to manage, because any change can break existing designs. We settled on three principles to keep it manageable:</p>
+            <ul class="principles">
+              <li class="principle">
+                <span class="principle__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg></span>
+                <div>
+                  <p class="principle__title">Mobile-first</p>
+                  <p>Paytient is a mobile-first product, so the system follows the same rule. Clear rules for how mobile designs adjust to larger viewports cut a lot of design and development complexity.</p>
+                </div>
+              </li>
+              <li class="principle">
+                <span class="principle__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"/></svg></span>
+                <div>
+                  <p class="principle__title">Purposeful minimalism</p>
+                  <p>We kept the system lightweight to limit design debt, adding only the styles, components and patterns we needed. Before adding anything new, we asked how many other places it would be useful and whether an existing component could do the job.</p>
+                </div>
+              </li>
+              <li class="principle">
+                <span class="principle__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 0 0 5.304 0l6.401-6.402M6.75 21A3.75 3.75 0 0 1 3 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 0 0 3.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008Z"/></svg></span>
+                <div>
+                  <p class="principle__title">Consistency before style</p>
+                  <p>We kept one visual language that followed Paytient's brand and matched the coded components.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <figure class="figure">
+          <img src="/assets/img/projects/paytient/design-system.webp" width="2000" height="1314" alt="Paytient Design System 2.0 pages: logo, cards, buttons, icons, typography, colors, inputs, notifications, tabs, dropdowns and navigation" loading="lazy">
+          <figcaption>Paytient Design System 2.0</figcaption>
+        </figure>
+        <div class="row">
+          <span class="spacer" aria-hidden="true"></span>
+          <div class="prose">
+            <h3>Working with engineering</h3>
+            <p>Front-end engineers built a repository of coded components that matched the system's components and patterns. They also helped us set practical naming conventions for design tokens: margins, corner radius, font sizes and colors. Consistent token names kept design and code closer together, removed ambiguity, and made the system easier to maintain.</p>
+          </div>
+        </div>
+        <figure class="figure">
+          <img src="/assets/img/projects/paytient/responsive-home.webp" width="2000" height="925" alt="Paytient home screen on tablet, phone and desktop" loading="lazy">
+          <figcaption>The home screen's responsive behavior</figcaption>
+        </figure>
+        <div class="row">
+          <span class="spacer" aria-hidden="true"></span>
+          <div class="prose">
+            <h3>Expanding to desktop</h3>
+            <p>What started as a lightweight library for the mobile-first product soon had to cover new products. The biggest was the Paytient Operations Portal (POP), a desktop-only management dashboard with different requirements. I created a separate library for POP. Most styles and components still came from the core system, and POP added desktop components like tables, advanced filters and metric cards.</p>
+          </div>
+        </div>
+        <figure class="figure">
+          <img src="/assets/img/projects/paytient/pop.webp" width="2000" height="1178" alt="Paytient Operations Portal styles and components: type, blue and fuchsia colors, metric cards and a filtered table" loading="lazy">
+          <figcaption>The POP, short for Paytient Operations Portal</figcaption>
+        </figure>
+      </section>
+
+      <section class="case__section">
+        <div class="row">
+          <h2 class="label">Product goals</h2>
+          <div class="prose">
+            <p>With the foundation in place, we could finally expand the product. Our goals came from business needs and customer feedback. Priorities shifted over time, but three stayed constant:</p>
+            <ul class="cards">
+              <li class="card">
+                <p class="card__title">Increase onboarding completion</p>
+                <p>Simplify the flow and build trust with members earlier.</p>
+              </li>
+              <li class="card">
+                <p class="card__title">Increase card utilization</p>
+                <p>Turn the home screen into a hub that explains how the product works, announces new features and reminds members about pending items.</p>
+              </li>
+              <li class="card">
+                <p class="card__title">Reduce delinquency</p>
+                <p>Surface early payment and past-due options throughout the app so members repay on time.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case__section">
+        <div class="row">
+          <h2 class="label">How we worked</h2>
+          <div class="prose">
+            <p>Paytient's development process was an adaptation of Scrum, and we adapted the design process from that to fit how design work actually runs. Design sprints overlapped with development sprints, so we could share certain ceremonies, and we kept adjusting the process to serve the team.</p>
+          </div>
+        </div>
+        <div class="row">
+          <span class="spacer" aria-hidden="true"></span>
+          <div class="prose">
+            <h3>User research</h3>
+            <p>We ran in-person and remote research throughout. Two in-person rounds with real members, in New Orleans (June 2022) and Columbia, Missouri (October 2022), were open conversations about how people used Paytient day to day, what got in their way, and which features mattered. Watching their reactions as they used the product let us test larger features and app redesigns in a real setting and uncover needs we hadn't spotted.</p>
+            <p>For targeted feedback on specific features, we used UserTesting.com and Maze. Participants completed tasks or moved through prototypes while we collected quantitative and qualitative data. It was faster and cheaper, and it reached more people, though we had to explain the product well to testers who had never seen it. We iterated quickly and caught pain points before launch.</p>
+          </div>
+        </div>
+        <figure class="figure">
+          <img src="/assets/img/projects/paytient/maze-report.png" width="1863" height="1053" alt="Maze report for an opinion-scale question on the welcome screen: 20 responses, 4.2 average" loading="lazy">
+          <figcaption>A research round in Maze on a redesigned welcome screen</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="/assets/img/projects/paytient/usertesting.webp" width="1532" height="1346" alt="UserTesting.com test plan and a session recording of a tester going through the onboarding prototype, with timestamped notes" loading="lazy">
+          <figcaption>A research round in UserTesting.com on a low-fidelity onboarding prototype</figcaption>
+        </figure>
+        <div class="row">
+          <span class="spacer" aria-hidden="true"></span>
+          <div class="prose">
+            <h3>Figma workflow</h3>
+            <p>After a few iterations we settled on two kinds of files. Work-in-progress files were for design, so we could explore and experiment freely. Dev-ready files were for development, and only finalized designs moved into them, so engineers saw only what was ready to build.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case__section">
+        <div class="row">
+          <h2 class="label">Growing the team</h2>
+          <div class="prose">
+            <p>As Paytient scaled, I helped recruit and onboard new designers, taking the team from 2 to 5. I established the documentation and processes that let them contribute to the product, encouraged open, constructive feedback between designers, and made sure everyone felt comfortable sharing ideas. That moved us from one solo designer to a team working together.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case__section">
+        <div class="row">
+          <h2 class="label">The rebrand</h2>
+          <div class="prose">
+            <p>In October 2022, Paytient's marketing team announced a brand refresh. The saturated purple and fluorescent green went out, replaced by a softer dark purple and blue. Circular, our only font, gave way to Gilroy and Inter. The product had to follow.</p>
+            <p>We started with an audit, then systematically updated the global design tokens and components. Because the system was flexible and well documented, the transition was smooth, and we shipped the refreshed product without disrupting our workflow. That is Paytient 2.0, and it still looks that way today.</p>
+          </div>
+        </div>
+        <figure class="figure">
+          <img src="/assets/img/projects/paytient/before-after-rebrand.webp" width="2000" height="1329" alt="Paytient home screen before and after the rebrand, with the old and new type, colour palettes and icons" loading="lazy">
+        </figure>
+      </section>
+
+      <section class="case__section">
+        <div class="row">
+          <h2 class="label">Outcomes</h2>
+          <div class="prose">
+            <ul class="bullets">
+              <li>The design system let us iterate quickly and kept the experience consistent as Paytient grew.</li>
+              <li>Agile workflows and documentation helped new team members get up to speed and supported cross-functional work.</li>
+              <li>The refreshed identity made Paytient feel like a trusted, modern option in healthcare fintech.</li>
+            </ul>
+            <h3>What users said</h3>
+            <div class="quotes">
+              <blockquote class="quote">
+                <p class="quote__stars" aria-label="5 out of 5 stars">★★★★★</p>
+                <p>"Account was very easy to setup and website is simple to navigate."</p>
+                <footer>Cristopher, Feb 2024</footer>
+              </blockquote>
+              <blockquote class="quote">
+                <p class="quote__stars" aria-label="5 out of 5 stars">★★★★★</p>
+                <p>"Setting up the card was a breeze, and I was impressed by how quickly I could access funds for my healthcare needs."</p>
+                <footer>Andrea, Sep 2024</footer>
+              </blockquote>
+              <blockquote class="quote">
+                <p class="quote__stars" aria-label="5 out of 5 stars">★★★★★</p>
+                <p>"Easy to setup and easy to use."</p>
+                <footer>Milton, Jan 2025</footer>
+              </blockquote>
+              <blockquote class="quote">
+                <p class="quote__stars" aria-label="5 out of 5 stars">★★★★★</p>
+                <p>"Super easy! And easy to navigate the app!"</p>
+                <footer>Christine, Mar 2025</footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <nav class="next" aria-label="More projects">
+        <a class="next__link" href="/">
+          <span class="label"><span class="next__arrow" aria-hidden="true">←</span> Home</span>
+          <span class="project__name next__name">All projects</span>
+        </a>
+        <a class="next__link next__link--next" href="/projects/knok/" rel="next">
+          <span class="label">Next project <span class="next__arrow" aria-hidden="true">→</span></span>
+          <span class="project__name next__name">knok</span>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">Tiago Gonçalves © 2026</footer>
+</div>
+</body>
+</html>
