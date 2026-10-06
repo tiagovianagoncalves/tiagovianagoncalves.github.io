@@ -1438,6 +1438,7 @@ a.item:hover::before {
 }
 
 .figure .ph {
+  aspect-ratio: 16 / 9;
   border-style: dashed;
   border-color: var(--gray-200);
 }
