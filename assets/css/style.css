@@ -1502,9 +1502,9 @@ a.item:hover::before {
   align-items: center;
   justify-content: center;
   padding: 72px 40px 40px;
-  background: rgba(17, 24, 39, 0.72);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  /* No backdrop blur: it fades out at the viewport edges, which reads as
+     rounded light corners around the overlay */
+  background: rgba(17, 24, 39, 0.8);
   opacity: 0;
   transition: opacity 0.2s ease;
   cursor: zoom-out;
