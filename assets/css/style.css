@@ -336,6 +336,11 @@ ul {
   line-height: 1;
 }
 
+/* An arrow set right before a number (↑40%) gets a little breathing room */
+.stat__value .sym--lead {
+  margin-right: 3px;
+}
+
 .stat__label {
   margin-top: 1px;
   color: var(--gray-400);
