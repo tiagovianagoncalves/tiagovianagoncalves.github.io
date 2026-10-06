@@ -27,6 +27,8 @@
   <script src="/assets/js/transitions.js"></script>
   <script src="/assets/js/menu.js" defer></script>
   <script src="/assets/js/lightbox.js" defer></script>
+  <script src="/assets/js/carousel.js" defer></script>
+  <script src="/assets/js/changes.js" defer></script>
 </head>
 <body>
 <div class="page">
@@ -116,7 +118,7 @@
               <p class="stat__label">Monthly card payments</p>
             </li>
             <li class="stat">
-              <p class="stat__value">5 <span class="sym sym--inter">→</span> 2 mins.</p>
+              <p class="stat__value"><span class="sym sym--inter">↓</span>35%</p>
               <p class="stat__label">Time to full onboarding</p>
             </li>
           </ul>
@@ -138,8 +140,22 @@
             <li><div class="item"><span class="item__when">2023 - 2025</span><span>Grew the design team from 2 to 5, expanded the design system, and launched new features and products.</span></div></li>
           </ul>
         </div>
-        <figure class="figure">
-          <img src="/assets/img/projects/paytient/2021-vs-2025.webp" width="2000" height="1225" alt="Paytient app in 2021 next to 2025: welcome, card, transactions and transaction detail screens, then the redesigned onboarding, home, summary, transaction details, notifications and settings" loading="lazy">
+        <figure class="figure carousel" aria-roledescription="carousel" aria-label="Paytient versions">
+          <div class="carousel__viewport">
+            <div class="carousel__track" tabindex="0">
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 3" data-caption="Paytient MVP"><img src="/assets/img/projects/paytient/versions-1.png" width="2100" height="1000" alt="Paytient MVP: welcome, card, transactions and transaction detail screens" loading="lazy"></div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 3" data-caption="Paytient v2"><img src="/assets/img/projects/paytient/versions-2.png" width="2100" height="1000" alt="Paytient v2: home, card details, transactions and payment schedule screens" loading="lazy"></div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 3" data-caption="Paytient v3"><img src="/assets/img/projects/paytient/versions-3.png" width="2100" height="1000" alt="Paytient v3: home, card, transactions and transaction detail screens" loading="lazy"></div>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Previous version"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="carousel__btn carousel__btn--next" type="button" aria-label="Next version"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="carousel__dots">
+            <button type="button" aria-label="Show version 1" aria-current="true"></button>
+            <button type="button" aria-label="Show version 2"></button>
+            <button type="button" aria-label="Show version 3"></button>
+          </div>
+          <figcaption aria-live="polite">Paytient MVP</figcaption>
         </figure>
       </section>
 
@@ -198,7 +214,7 @@
           </div>
         </div>
         <figure class="figure">
-          <img src="/assets/img/projects/paytient/design-system.webp" width="2000" height="1314" alt="Paytient Design System 2.0 pages: logo, cards, buttons, icons, typography, colors, inputs, notifications, tabs, dropdowns and navigation" loading="lazy">
+          <img src="/assets/img/projects/paytient/design-system.png" width="5805" height="3815" alt="Paytient Design System 2.0 pages: logo, cards, buttons, icons, typography, colors, inputs, notifications, tabs, dropdowns and navigation" loading="lazy">
           <figcaption>Paytient Design System 2.0</figcaption>
         </figure>
         <div class="row">
@@ -215,12 +231,39 @@
         <div class="row">
           <span class="spacer" aria-hidden="true"></span>
           <div class="prose">
+            <h3>The onboarding flow</h3>
+            <p>We personalized the onboarding so members could trust Paytient earlier, which raised engagement and cut drop-off. Between 2021 and 2025, completion went from 53.7% to 87.4%, and the average time to finish fell from 3.6 to 2.35 minutes.</p>
+          </div>
+        </div>
+        <figure class="figure">
+          <img src="/assets/img/projects/paytient/onboarding-improvements.png" width="2958" height="1663" alt="Product deck slide on the launched onboarding, with the repayment plan step removed: validate phone or email, create login, welcome, assess ability to pay, and sign agreements and policies" loading="lazy">
+          <figcaption>Summary of onboarding improvements from a late 2024 product deck</figcaption>
+        </figure>
+        <div class="row results-box">
+          <h2 class="label">Onboarding</h2>
+          <ul class="case-stats">
+            <li class="stat">
+              <p class="stat__value">54% <span class="sym sym--inter">→</span> 87%</p>
+              <p class="stat__label">Onboarding completion rate</p>
+            </li>
+            <li class="stat">
+              <p class="stat__value">3.6 <span class="sym sym--inter">→</span> 2.35 min.</p>
+              <p class="stat__label">Average time to complete onboarding</p>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <span class="spacer" aria-hidden="true"></span>
+          <div class="prose">
             <h3>Expanding to desktop</h3>
             <p>What started as a lightweight library for the mobile-first product soon had to cover new products. The biggest was the Paytient Operations Portal (POP), a desktop-only management dashboard with different requirements. I created a separate library for POP. Most styles and components still came from the core system, and POP added desktop components like tables, advanced filters and metric cards.</p>
           </div>
         </div>
         <figure class="figure">
           <img src="/assets/img/projects/paytient/pop.webp" width="2000" height="1178" alt="Paytient Operations Portal styles and components: type, blue and fuchsia colors, metric cards and a filtered table" loading="lazy">
+        </figure>
+        <figure class="figure">
+          <img src="/assets/img/projects/paytient/pop-screens.png" width="4114" height="1287" alt="Paytient Operations Portal employees page at three widths: full sidebar, collapsed icon sidebar, and the sidebar expanded over the content" loading="lazy">
           <figcaption>The POP, short for Paytient Operations Portal</figcaption>
         </figure>
       </section>
@@ -263,13 +306,20 @@
             <p>For targeted feedback on specific features, we used UserTesting.com and Maze. Participants completed tasks or moved through prototypes while we collected quantitative and qualitative data. It was faster and cheaper, and it reached more people, though we had to explain the product well to testers who had never seen it. We iterated quickly and caught pain points before launch.</p>
           </div>
         </div>
-        <figure class="figure">
-          <img src="/assets/img/projects/paytient/maze-report.png" width="1863" height="1053" alt="Maze report for an opinion-scale question on the welcome screen: 20 responses, 4.2 average" loading="lazy">
-          <figcaption>A research round in Maze on a redesigned welcome screen</figcaption>
-        </figure>
-        <figure class="figure">
-          <img src="/assets/img/projects/paytient/usertesting.webp" width="1532" height="1346" alt="UserTesting.com test plan and a session recording of a tester going through the onboarding prototype, with timestamped notes" loading="lazy">
-          <figcaption>A research round in UserTesting.com on a low-fidelity onboarding prototype</figcaption>
+        <figure class="figure carousel" aria-roledescription="carousel" aria-label="Remote research rounds">
+          <div class="carousel__viewport">
+            <div class="carousel__track" tabindex="0">
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 2" data-caption="A research round in Maze on a redesigned welcome screen"><img src="/assets/img/projects/paytient/maze-report.png" width="1863" height="1053" alt="Maze report for an opinion-scale question on the welcome screen: 20 responses, 4.2 average" loading="lazy"></div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 2" data-caption="A research round in UserTesting.com on a low-fidelity onboarding prototype"><img src="/assets/img/projects/paytient/usertesting.png" width="1863" height="993" alt="UserTesting.com session recording of a tester on the onboarding prototype's agreements step, with timestamped notes" loading="lazy"></div>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Previous research round"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="carousel__btn carousel__btn--next" type="button" aria-label="Next research round"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="carousel__dots">
+            <button type="button" aria-label="Show research round 1" aria-current="true"></button>
+            <button type="button" aria-label="Show research round 2"></button>
+          </div>
+          <figcaption aria-live="polite">A research round in Maze on a redesigned welcome screen</figcaption>
         </figure>
         <div class="row">
           <span class="spacer" aria-hidden="true"></span>
@@ -278,6 +328,9 @@
             <p>After a few iterations we settled on two kinds of files. Work-in-progress files were for design, so we could explore and experiment freely. Dev-ready files were for development, and only finalized designs moved into them, so engineers saw only what was ready to build.</p>
           </div>
         </div>
+        <figure class="figure">
+          <img src="/assets/img/projects/paytient/figma-workflow.png" width="2486" height="1864" alt="Figma workflow: design system files open to designers, work-in-progress files to designers and the product team with pages named after Jira tickets, and dev-ready files to designers, product and engineers with pages named after app areas" loading="lazy">
+        </figure>
       </section>
 
       <section class="case__section">
@@ -291,15 +344,74 @@
 
       <section class="case__section">
         <div class="row">
-          <h2 class="label">The rebrand</h2>
+          <h2 class="label">What changed</h2>
           <div class="prose">
-            <p>In October 2022, Paytient's marketing team announced a brand refresh. The saturated purple and fluorescent green went out, replaced by a softer dark purple and blue. Circular, our only font, gave way to Gilroy and Inter. The product had to follow.</p>
-            <p>We started with an audit, then systematically updated the global design tokens and components. Because the system was flexible and well documented, the transition was smooth, and we shipped the refreshed product without disrupting our workflow. That is Paytient 2.0, and it still looks that way today.</p>
+            <p>How each part of the member app changed while I was at Paytient.</p>
+            <div class="changes__filters" role="group" aria-label="Show changes by type">
+              <button type="button" class="change change--imp" data-filter="imp" aria-pressed="true">Improvement</button>
+              <button type="button" class="change change--new" data-filter="new" aria-pressed="true">New feature</button>
+              <button type="button" class="change change--same" data-filter="same" aria-pressed="true">Unchanged</button>
+            </div>
           </div>
         </div>
-        <figure class="figure">
-          <img src="/assets/img/projects/paytient/before-after-rebrand.webp" width="2000" height="1329" alt="Paytient home screen before and after the rebrand, with the old and new type, colour palettes and icons" loading="lazy">
-        </figure>
+        <div class="row">
+          <span class="spacer" aria-hidden="true"></span>
+          <div class="changes">
+            <div class="changes__group">
+              <h3 class="changes__title">Onboarding</h3>
+              <ul class="list">
+                <li data-change="imp"><div class="item"><span class="item__main"><span class="item__name">Splash screen</span><span class="change change--imp">Improvement</span></span></div></li>
+                <li data-change="new"><div class="item"><span class="item__main"><span class="item__name">Welcome screen</span><span class="change change--new">New feature</span></span></div></li>
+                <li data-change="imp"><div class="item"><span class="item__main"><span class="item__name">Account creation</span><span class="change change--imp">Improvement</span></span></div></li>
+                <li data-change="imp"><div class="item"><span class="item__main"><span class="item__name">Ability to repay</span><span class="change change--imp">Improvement</span></span></div></li>
+                <li data-change="new"><div class="item"><span class="item__main"><span class="item__name">Biometrics</span><span class="change change--new">New feature</span></span></div></li>
+                <li data-change="new"><div class="item"><span class="item__main"><span class="item__name">Multi-factor authentication</span><span class="change change--new">New feature</span></span></div></li>
+                <li data-change="same"><div class="item"><span class="item__main"><span class="item__name">Agreements</span><span class="change change--same">Unchanged</span></span></div></li>
+              </ul>
+            </div>
+            <div class="changes__group">
+              <h3 class="changes__title">Home</h3>
+              <ul class="list">
+                <li data-change="same"><div class="item"><span class="item__main"><span class="item__name">Paytient card</span><span class="change change--same">Unchanged</span></span></div></li>
+                <li data-change="new"><div class="item"><span class="item__main"><span class="item__name">Summary card</span><span class="change change--new">New feature</span></span></div></li>
+                <li data-change="new"><div class="item"><span class="item__main"><span class="item__name">To-do list</span><span class="change change--new">New feature</span></span></div></li>
+                <li data-change="imp"><div class="item"><span class="item__main"><span class="item__name">Where to use Paytient</span><span class="change change--imp">Improvement</span></span></div></li>
+              </ul>
+            </div>
+            <div class="changes__group">
+              <h3 class="changes__title">Payment flows</h3>
+              <ul class="list">
+                <li data-change="imp"><div class="item"><span class="item__main"><span class="item__name">One-time payments</span><span class="change change--imp">Improvement</span></span></div></li>
+                <li data-change="new"><div class="item"><span class="item__main"><span class="item__name">Manual payments</span><span class="change change--new">New feature</span></span></div></li>
+                <li data-change="new"><div class="item"><span class="item__main"><span class="item__name">Guest payments</span><span class="change change--new">New feature</span></span></div></li>
+              </ul>
+            </div>
+            <div class="changes__group">
+              <h3 class="changes__title">Rewards</h3>
+              <ul class="list">
+                <li data-change="same"><div class="item"><span class="item__main"><span class="item__name">Rewards history</span><span class="change change--same">Unchanged</span></span></div></li>
+                <li data-change="new"><div class="item"><span class="item__main"><span class="item__name">Cashback Care</span><span class="change change--new">New feature</span></span></div></li>
+              </ul>
+            </div>
+            <div class="changes__group">
+              <h3 class="changes__title">Settings</h3>
+              <ul class="list">
+                <li data-change="imp"><div class="item"><span class="item__main"><span class="item__name">Add and manage payment methods</span><span class="change change--imp">Improvement</span></span></div></li>
+                <li data-change="imp"><div class="item"><span class="item__main"><span class="item__name">Repayment settings</span><span class="change change--imp">Improvement</span></span></div></li>
+                <li data-change="new"><div class="item"><span class="item__main"><span class="item__name">Backup payment methods</span><span class="change change--new">New feature</span></span></div></li>
+                <li data-change="new"><div class="item"><span class="item__main"><span class="item__name">Communication preferences</span><span class="change change--new">New feature</span></span></div></li>
+              </ul>
+            </div>
+            <div class="changes__group">
+              <h3 class="changes__title">Transactions</h3>
+              <ul class="list">
+                <li data-change="imp"><div class="item"><span class="item__main"><span class="item__name">Transaction list</span><span class="change change--imp">Improvement</span></span></div></li>
+                <li data-change="new"><div class="item"><span class="item__main"><span class="item__name">Transaction summary</span><span class="change change--new">New feature</span></span></div></li>
+                <li data-change="new"><div class="item"><span class="item__main"><span class="item__name">Transaction details</span><span class="change change--new">New feature</span></span></div></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="case__section">

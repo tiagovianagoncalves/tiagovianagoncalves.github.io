@@ -44,10 +44,13 @@
     main.removeAttribute("data-locked");
     try { sessionStorage.setItem(KEY, password); } catch (e) {}
     if (window.ptStagger) window.ptStagger();
-    // Image viewer for the case-study figures, now that they exist
-    var s = document.createElement("script");
-    s.src = "/assets/js/lightbox.js";
-    document.body.appendChild(s);
+    // Carousels and the image viewer for the case-study figures, now that they exist
+    ["/assets/js/carousel.js", "/assets/js/lightbox.js"].forEach(function (src) {
+      var s = document.createElement("script");
+      s.src = src;
+      s.async = false;
+      document.body.appendChild(s);
+    });
   }
 
   form.addEventListener("submit", function (e) {
