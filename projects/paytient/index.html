@@ -27,6 +27,7 @@
   <script src="/assets/js/transitions.js"></script>
   <script src="/assets/js/menu.js" defer></script>
   <script src="/assets/js/lightbox.js" defer></script>
+  <script src="/assets/js/carousel.js" defer></script>
 </head>
 <body>
 <div class="page">
@@ -138,8 +139,22 @@
             <li><div class="item"><span class="item__when">2023 - 2025</span><span>Grew the design team from 2 to 5, expanded the design system, and launched new features and products.</span></div></li>
           </ul>
         </div>
-        <figure class="figure">
-          <img src="/assets/img/projects/paytient/2021-vs-2025.webp" width="2000" height="1225" alt="Paytient app in 2021 next to 2025: welcome, card, transactions and transaction detail screens, then the redesigned onboarding, home, summary, transaction details, notifications and settings" loading="lazy">
+        <figure class="figure carousel" aria-roledescription="carousel" aria-label="Paytient versions">
+          <div class="carousel__viewport">
+            <div class="carousel__track" tabindex="0">
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 3" data-caption="Paytient MVP"><img src="/assets/img/projects/paytient/versions-1.png" width="2100" height="1000" alt="Paytient MVP: welcome, card, transactions and transaction detail screens" loading="lazy"></div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 3" data-caption="Paytient v2"><img src="/assets/img/projects/paytient/versions-2.png" width="2100" height="1000" alt="Paytient v2: home, card details, transactions and payment schedule screens" loading="lazy"></div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 3" data-caption="Paytient v3"><img src="/assets/img/projects/paytient/versions-3.png" width="2100" height="1000" alt="Paytient v3: home, card, transactions and transaction detail screens" loading="lazy"></div>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Previous version"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="carousel__btn carousel__btn--next" type="button" aria-label="Next version"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="carousel__dots">
+            <button type="button" aria-label="Show version 1" aria-current="true"></button>
+            <button type="button" aria-label="Show version 2"></button>
+            <button type="button" aria-label="Show version 3"></button>
+          </div>
+          <figcaption aria-live="polite">Paytient MVP</figcaption>
         </figure>
       </section>
 
@@ -198,7 +213,7 @@
           </div>
         </div>
         <figure class="figure">
-          <img src="/assets/img/projects/paytient/design-system.webp" width="2000" height="1314" alt="Paytient Design System 2.0 pages: logo, cards, buttons, icons, typography, colors, inputs, notifications, tabs, dropdowns and navigation" loading="lazy">
+          <img src="/assets/img/projects/paytient/design-system.png" width="5805" height="3815" alt="Paytient Design System 2.0 pages: logo, cards, buttons, icons, typography, colors, inputs, notifications, tabs, dropdowns and navigation" loading="lazy">
           <figcaption>Paytient Design System 2.0</figcaption>
         </figure>
         <div class="row">
@@ -221,6 +236,9 @@
         </div>
         <figure class="figure">
           <img src="/assets/img/projects/paytient/pop.webp" width="2000" height="1178" alt="Paytient Operations Portal styles and components: type, blue and fuchsia colors, metric cards and a filtered table" loading="lazy">
+        </figure>
+        <figure class="figure">
+          <img src="/assets/img/projects/paytient/pop-screens.png" width="4114" height="1287" alt="Paytient Operations Portal employees page at three widths: full sidebar, collapsed icon sidebar, and the sidebar expanded over the content" loading="lazy">
           <figcaption>The POP, short for Paytient Operations Portal</figcaption>
         </figure>
       </section>
@@ -263,13 +281,20 @@
             <p>For targeted feedback on specific features, we used UserTesting.com and Maze. Participants completed tasks or moved through prototypes while we collected quantitative and qualitative data. It was faster and cheaper, and it reached more people, though we had to explain the product well to testers who had never seen it. We iterated quickly and caught pain points before launch.</p>
           </div>
         </div>
-        <figure class="figure">
-          <img src="/assets/img/projects/paytient/maze-report.png" width="1863" height="1053" alt="Maze report for an opinion-scale question on the welcome screen: 20 responses, 4.2 average" loading="lazy">
-          <figcaption>A research round in Maze on a redesigned welcome screen</figcaption>
-        </figure>
-        <figure class="figure">
-          <img src="/assets/img/projects/paytient/usertesting.webp" width="1532" height="1346" alt="UserTesting.com test plan and a session recording of a tester going through the onboarding prototype, with timestamped notes" loading="lazy">
-          <figcaption>A research round in UserTesting.com on a low-fidelity onboarding prototype</figcaption>
+        <figure class="figure carousel" aria-roledescription="carousel" aria-label="Remote research rounds">
+          <div class="carousel__viewport">
+            <div class="carousel__track" tabindex="0">
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 2" data-caption="A research round in Maze on a redesigned welcome screen"><img src="/assets/img/projects/paytient/maze-report.png" width="1863" height="1053" alt="Maze report for an opinion-scale question on the welcome screen: 20 responses, 4.2 average" loading="lazy"></div>
+              <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 2" data-caption="A research round in UserTesting.com on a low-fidelity onboarding prototype"><img src="/assets/img/projects/paytient/usertesting.png" width="1863" height="993" alt="UserTesting.com session recording of a tester on the onboarding prototype's agreements step, with timestamped notes" loading="lazy"></div>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Previous research round"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="carousel__btn carousel__btn--next" type="button" aria-label="Next research round"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="carousel__dots">
+            <button type="button" aria-label="Show research round 1" aria-current="true"></button>
+            <button type="button" aria-label="Show research round 2"></button>
+          </div>
+          <figcaption aria-live="polite">A research round in Maze on a redesigned welcome screen</figcaption>
         </figure>
         <div class="row">
           <span class="spacer" aria-hidden="true"></span>
