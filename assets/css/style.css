@@ -427,11 +427,21 @@ main {
   position: relative;
   display: block;
   overflow: hidden;
-  outline: var(--image-stroke);
-  outline-offset: -1px;
   border-radius: 8px;
   aspect-ratio: 880 / 477.35;
   transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* The stroke sits on an overlay above the images: an inset outline would be
+   painted over by the hover zoom, since a transformed image gets its own layer */
+.project__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: var(--image-stroke);
+  border-radius: inherit;
+  pointer-events: none;
 }
 
 .project__media img {
