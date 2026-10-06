@@ -1467,8 +1467,18 @@ a.item:hover::before {
 }
 
 /* Product screenshots sit on a tinted panel instead of the page white */
+/* Space between a tinted frame and its image. Case studies with busy,
+   dense screenshots (.case--snug) use less, so the screens read larger. */
+.case {
+  --tint-pad: 5%;
+}
+
+.case--snug {
+  --tint-pad: 3%;
+}
+
 .figure--tint {
-  padding: 5%;
+  padding: var(--tint-pad);
   outline: var(--image-stroke);
   outline-offset: -1px;
   border-radius: 8px;
@@ -1490,7 +1500,7 @@ a.item:hover::before {
 }
 
 .figure--tint .carousel__viewport {
-  padding: 5%;
+  padding: var(--tint-pad);
   outline: var(--image-stroke);
   outline-offset: -1px;
   border-radius: 8px;
@@ -1518,7 +1528,7 @@ a.item:hover::before {
    The tinted stage wraps only the images and tags, so the caption sits
    below it. */
 .compare__stage {
-  padding: 5% 5% 0;
+  padding: var(--tint-pad) var(--tint-pad) 0;
   outline: var(--image-stroke);
   outline-offset: -1px;
   border-radius: 8px;
