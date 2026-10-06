@@ -1186,6 +1186,8 @@ a.item:hover::before {
 .principle__icon svg {
   width: 32px;
   height: 32px;
+  /* Lighter than the icons' own 1.5 stroke */
+  stroke-width: 1.25;
 }
 
 .principle__title {
