@@ -1515,9 +1515,10 @@ a.item:hover::before {
    the "before" image is clipped to the left of the handle. Drag anywhere on
    the frame, or focus it and use the arrow keys. Both images are cropped to
    the frame from the top left, so screenshots of different sizes line up.
-   The tinted stage wraps only the images, so the caption sits below it. */
+   The tinted stage wraps only the images and tags, so the caption sits
+   below it. */
 .compare__stage {
-  padding: 5%;
+  padding: 5% 5% 0;
   outline: var(--image-stroke);
   outline-offset: -1px;
   border-radius: 8px;
@@ -1586,9 +1587,14 @@ a.item:hover::before {
   transform: translate(-50%, -50%);
 }
 
+/* The v4/v5 tags sit in the tinted area below the image, one under each side */
+.compare__tags {
+  display: flex;
+  justify-content: space-between;
+  padding: max(2.5%, 12px) 0;
+}
+
 .compare__tag {
-  position: absolute;
-  top: 12px;
   padding: 2px 8px;
   border-radius: 999px;
   background: rgba(38, 35, 58, 0.72);
@@ -1596,15 +1602,6 @@ a.item:hover::before {
   font-size: 12px;
   font-weight: 500;
   line-height: 20px;
-  pointer-events: none;
-}
-
-.compare__tag--before {
-  left: 12px;
-}
-
-.compare__tag--after {
-  right: 12px;
 }
 
 .figure figcaption {
