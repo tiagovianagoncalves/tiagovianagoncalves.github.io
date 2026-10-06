@@ -59,6 +59,8 @@
   --image-stroke: 1px solid rgba(0, 0, 0, 0.1);
   --highlight: #dbf5ff;
   --white: #ffffff;
+  /* Project covers on Home and case study heroes all share this shape */
+  --cover-ratio: 16 / 9;
 
   --font-display: "Suspiria", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -428,7 +430,7 @@ main {
   display: block;
   overflow: hidden;
   border-radius: 8px;
-  aspect-ratio: 880 / 477.35;
+  aspect-ratio: var(--cover-ratio);
   transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -452,10 +454,6 @@ main {
   transform: scale(1.015);
 }
 
-.project--compact .project__media {
-  aspect-ratio: 428 / 330;
-}
-
 /* Exported compositions: one image fills the card */
 .project__media--image picture,
 .project__media--image img {
@@ -475,7 +473,7 @@ main {
 .media-intaker img {
   position: absolute;
   left: 11.932%;
-  top: 13.826%;
+  top: 19%;
   width: 88.068%;
   border-radius: 8px 0 0 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
@@ -489,13 +487,13 @@ main {
 .media-knok img {
   position: absolute;
   left: 50%;
-  top: 4.04%;
+  top: 50%;
   width: 78.6%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 
 .media-knok:hover img {
-  transform: translateX(-50%) scale(1.015);
+  transform: translate(-50%, -50%) scale(1.015);
 }
 
 .project__body {
@@ -1350,7 +1348,7 @@ a.item:hover::before {
 
 /* knok's screenshot is centred with a transform; keep it, minus the zoom */
 .case__cover .media-knok:hover img {
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 
 /* Space between a tinted frame and its image. Case studies with busy,
@@ -1423,11 +1421,6 @@ a.item:hover::before {
 
 .figure-trio {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-/* Compact thumbnails (RMS, Sony) used as covers take the wide cover ratio */
-.case__cover .media-cover-compact {
-  aspect-ratio: 880 / 516;
 }
 
 /* Image slot until the final image is supplied */
@@ -1940,11 +1933,6 @@ a.item:hover::before {
     gap: 24px;
   }
 
-  .project__media,
-  .project--compact .project__media {
-    aspect-ratio: 345 / 187;
-  }
-
   .project__body,
   .project--compact .project__body {
     gap: 16px;
@@ -1972,7 +1960,6 @@ a.item:hover::before {
   }
 
   .media-knok img {
-    top: 5.88%;
     width: 76.8%;
   }
 
