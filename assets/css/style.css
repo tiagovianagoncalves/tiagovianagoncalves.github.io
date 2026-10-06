@@ -45,6 +45,7 @@
 
   --ink: #26233a;
   --gray-900: #111827;
+  --gray-700: #374151;
   --gray-600: #4b5563;
   --gray-400: #9ca3af;
   --gray-200: #e5e7eb;
@@ -52,6 +53,10 @@
   --gray-50: #f9fafb;
   --label: rgba(38, 35, 58, 0.4);
   --hairline: rgba(3, 7, 18, 0.08);
+  /* Images get a 10% black stroke drawn just inside their edge (outline with a
+     negative offset sits on top of the picture), so it reads the same on any
+     image instead of a grey border beside it */
+  --image-stroke: 1px solid rgba(0, 0, 0, 0.1);
   --highlight: #dbf5ff;
   --white: #ffffff;
 
@@ -417,7 +422,8 @@ main {
   position: relative;
   display: block;
   overflow: hidden;
-  border: 1px solid var(--hairline);
+  outline: var(--image-stroke);
+  outline-offset: -1px;
   border-radius: 8px;
   aspect-ratio: 880 / 477.35;
   transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -870,7 +876,8 @@ a.item:hover::before {
   position: relative;
   margin: 0;
   overflow: hidden;
-  border: 1px solid var(--hairline);
+  outline: var(--image-stroke);
+  outline-offset: -1px;
   border-radius: 8px;
   background: var(--gray-100);
 }
@@ -1041,15 +1048,63 @@ a.item:hover::before {
   color: var(--gray-400);
 }
 
-.timeline .item {
+/* Timeline: no row dividers; a vertical rail down the left with a dot beside
+   each period. The rail stops at the first and last dots. */
+.timeline {
+  --rail-x: 4px;
+  --dot-y: calc(9px + 0.76em); /* row padding + half a line of text */
+}
+
+.timeline > li .item,
+.timeline > li:last-child .item {
+  position: relative;
   align-items: baseline;
   gap: 16px;
+  padding-left: 24px;
+  border-bottom: 0;
 }
 
 .timeline .item__when {
   flex: none;
   width: 128px;
   color: var(--gray-400);
+}
+
+.timeline .item::before,
+.timeline .item::after {
+  content: "";
+  position: absolute;
+  left: var(--rail-x);
+}
+
+/* The rail */
+.timeline .item::before {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--gray-200);
+  transform: translateX(-50%);
+}
+
+.timeline > li:first-child .item::before {
+  top: var(--dot-y);
+}
+
+.timeline > li:last-child .item::before {
+  bottom: auto;
+  height: var(--dot-y);
+}
+
+/* The dot */
+.timeline .item::after {
+  top: var(--dot-y);
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  background: var(--gray-400);
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
 }
 
 .cards {
@@ -1120,7 +1175,7 @@ a.item:hover::before {
   border: 1px solid var(--gray-100);
   border-radius: 12px;
   background: var(--gray-50);
-  color: var(--ink);
+  color: var(--gray-700);
 }
 
 /* Inside a grey card the tile turns white so it still stands out */
@@ -1146,6 +1201,90 @@ a.item:hover::before {
 /* Two metrics share the width in halves instead of leaving a third column empty */
 .case-stats:has(> li:nth-child(2):last-child) {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* "What changed" map on case studies (changes.js): product areas flow down two
+   columns, each a list of rows like Work experience with the change type
+   tagged on the right. The type chips above filter the rows. */
+.changes {
+  column-count: 2;
+  column-gap: 40px;
+}
+
+.changes__group {
+  break-inside: avoid;
+  margin-bottom: 32px;
+}
+
+.changes__group:last-child {
+  margin-bottom: 0;
+}
+
+.changes__title {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gray-100);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.changes__group .list > li .item {
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.changes__group .list > li.is-last .item {
+  border-bottom: 0;
+}
+
+.changes__group .item__name {
+  white-space: normal;
+}
+
+.change {
+  flex: none;
+  padding: 1px 8px;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--gray-600);
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.change--new {
+  border-color: #a9e2f7;
+  background: var(--highlight);
+  color: var(--ink);
+}
+
+.change--same {
+  background: var(--gray-50);
+  color: var(--gray-400);
+}
+
+.changes__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.changes__filters .change {
+  padding: 3px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.changes__filters .change[aria-pressed="false"] {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+@media (max-width: 640px) {
+  .changes {
+    column-count: 1;
+  }
 }
 
 .quotes {
@@ -1183,13 +1322,35 @@ a.item:hover::before {
 .figure > img,
 .figure .ph {
   width: 100%;
-  border: 1px solid var(--hairline);
   border-radius: 8px;
 }
 
-/* Carousel (carousel.js): one image slot, arrows and dots to switch */
+.figure > img {
+  outline: var(--image-stroke);
+  outline-offset: -1px;
+}
+
+.figure .ph {
+  border: 1px solid var(--hairline);
+}
+
+/* Carousel (carousel.js): one image slot, arrows and dots to switch.
+   The dots sit on the caption's line, at the right, so they add no height. */
+.carousel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 16px;
+}
+
 .carousel__viewport {
   position: relative;
+  grid-column: 1 / -1;
+}
+
+.carousel figcaption {
+  grid-row: 2;
+  grid-column: 1;
 }
 
 .carousel__track {
@@ -1197,7 +1358,8 @@ a.item:hover::before {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  border: 1px solid var(--hairline);
+  outline: var(--image-stroke);
+  outline-offset: -1px;
   border-radius: 8px;
 }
 
@@ -1213,6 +1375,9 @@ a.item:hover::before {
 .carousel__slide {
   flex: 0 0 100%;
   scroll-snap-align: start;
+  /* Slides of different heights sit centred in the tallest one */
+  display: flex;
+  align-items: center;
 }
 
 .carousel__slide img {
@@ -1255,10 +1420,11 @@ a.item:hover::before {
 }
 
 .carousel__dots {
+  grid-row: 2;
+  grid-column: 2;
   display: flex;
-  justify-content: center;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .carousel__dots button {
@@ -1303,7 +1469,8 @@ a.item:hover::before {
 /* Product screenshots sit on a tinted panel instead of the page white */
 .figure--tint {
   padding: 5%;
-  border: 1px solid var(--hairline);
+  outline: var(--image-stroke);
+  outline-offset: -1px;
   border-radius: 8px;
   background: #e8f7fc;
 }
@@ -1311,6 +1478,37 @@ a.item:hover::before {
 .figure--tint > img {
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(3, 7, 18, 0.06);
+}
+
+/* A tinted carousel: the frame wraps only the slides, so the arrows sit at the
+   frame's edges and the dots and caption sit below it, as with a plain image */
+.figure--tint.carousel {
+  padding: 0;
+  outline: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.figure--tint .carousel__viewport {
+  padding: 5%;
+  outline: var(--image-stroke);
+  outline-offset: -1px;
+  border-radius: 8px;
+  background: #e8f7fc;
+}
+
+.figure--tint .carousel__track {
+  outline: var(--image-stroke);
+  outline-offset: -1px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(3, 7, 18, 0.06);
+}
+
+/* Images that bring their own shadow (floating modals on transparency) */
+.figure--float .carousel__track {
+  outline: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .figure figcaption {
@@ -1425,6 +1623,12 @@ a.item:hover::before {
   opacity: 1;
 }
 
+/* Leave room beside the image for the previous/next buttons */
+.lightbox--gallery {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
 .lightbox[hidden] {
   display: none;
 }
@@ -1445,6 +1649,12 @@ a.item:hover::before {
 
 .lightbox.is-open .lightbox__img {
   transform: none;
+}
+
+.lightbox__img--bare {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .lightbox__close {
@@ -1474,14 +1684,105 @@ a.item:hover::before {
   height: 20px;
 }
 
+/* Room under the image for the caption pill */
+.lightbox--captioned {
+  padding-bottom: 72px;
+}
+
+/* Same white pill as the Feed titles */
+.lightbox__caption {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  max-width: calc(100% - 80px);
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(3, 7, 18, 0.08);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: center;
+  transform: translateX(-50%);
+  cursor: default;
+}
+
+.lightbox__caption[hidden] {
+  display: none;
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 0 2px 8px rgba(3, 7, 18, 0.16);
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.lightbox__nav:hover {
+  background: var(--gray-100);
+}
+
+.lightbox__nav[hidden] {
+  display: none;
+}
+
+.lightbox__nav svg {
+  width: 20px;
+  height: 20px;
+}
+
+.lightbox__nav--prev {
+  left: 20px;
+}
+
+.lightbox__nav--next {
+  right: 20px;
+}
+
 @media (max-width: 640px) {
-  .lightbox {
+  .lightbox,
+  .lightbox--gallery {
     padding: 72px 12px 24px;
+  }
+
+  .lightbox--captioned {
+    padding-bottom: 64px;
+  }
+
+  .lightbox__caption {
+    bottom: 16px;
+    max-width: calc(100% - 24px);
   }
 
   .lightbox__close {
     top: 16px;
     right: 16px;
+  }
+
+  .lightbox__nav {
+    width: 32px;
+    height: 32px;
+  }
+
+  .lightbox__nav--prev {
+    left: 8px;
+  }
+
+  .lightbox__nav--next {
+    right: 8px;
   }
 }
 
@@ -1946,7 +2247,9 @@ a.item:hover::before {
     gap: 16px;
   }
 
-  .timeline .item {
+  /* Mobile: the period sits above its description */
+  .timeline > li .item,
+  .timeline > li:last-child .item {
     flex-direction: column;
     gap: 0;
   }
