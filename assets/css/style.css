@@ -60,7 +60,7 @@
   --highlight: #dbf5ff;
   --white: #ffffff;
   /* Project covers on Home and case study heroes all share this shape */
-  --cover-ratio: 16 / 9;
+  --cover-ratio: 16 / 10;
 
   --font-display: "Suspiria", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -472,9 +472,10 @@ main {
 
 .media-intaker img {
   position: absolute;
+  /* Wider than the space left of it, so it runs off the right and bottom */
   left: 11.932%;
   top: 19%;
-  width: 88.068%;
+  width: 96%;
   border-radius: 8px 0 0 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -1953,12 +1954,6 @@ a.item:hover::before {
   }
 
   /* Mobile crops */
-  .media-intaker img {
-    left: 12.46%;
-    top: 19.79%;
-    width: 87.54%;
-  }
-
   .media-knok img {
     width: 76.8%;
   }
