@@ -322,7 +322,7 @@ ul {
 .stat__value {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.21;
   color: var(--ink);
   white-space: nowrap;
@@ -393,6 +393,13 @@ main {
 .stats .stat:first-child {
   padding-left: 0;
   border-left: 0;
+}
+
+/* The headline stats under the intro stay larger and lighter than the
+   metrics on project cards and case studies */
+.stats .stat__value {
+  font-weight: 300;
+  font-size: 24px;
 }
 
 .projects {
@@ -535,9 +542,10 @@ main {
 }
 
 .project__title {
-  font-weight: 600;
-  font-size: 17px;
-  line-height: 1.52;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
   letter-spacing: -0.01em;
 }
 
@@ -555,11 +563,6 @@ main {
 
 .project__stats--2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-/* Project cards on Projects use slightly smaller metric values */
-.project__stats .stat__value {
-  font-size: 22px;
 }
 
 .pill {
@@ -1093,7 +1096,7 @@ a.item:hover::before {
 }
 
 .card__title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 15px;
   line-height: 1.3;
@@ -1114,9 +1117,12 @@ a.item:hover::before {
   flex-direction: column;
 }
 
-/* Lists of principles or cards get more air after their intro paragraph */
+/* Lists of principles or cards get more air around them: after their intro
+   paragraph, and the same before the paragraph that follows */
 .prose > p + .principles,
-.prose > p + .cards {
+.prose > p + .cards,
+.prose > .principles + p,
+.prose > .cards + p {
   margin-top: 16px;
 }
 
@@ -1170,7 +1176,7 @@ a.item:hover::before {
 .case-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 32px 16px;
 }
 
 /* Two metrics share the width in halves instead of leaving a third column
