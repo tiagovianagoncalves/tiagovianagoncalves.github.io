@@ -4,7 +4,7 @@
 // buttons, the arrow keys or a swipe. The image's caption, if it has one,
 // shows in a white pill under it.
 (function () {
-  var images = document.querySelectorAll(".case .figure:not(.case__cover) > img, .carousel__slide > img, .feed__item > img");
+  var images = document.querySelectorAll(".case .figure:not(.case__cover):not(.figure--crop) > img, .carousel__slide > img, .feed__item > img");
   if (!images.length) return;
 
   var box = document.createElement("div");
@@ -50,8 +50,9 @@
     var img = group[index];
     big.src = img.currentSrc || img.src;
     big.alt = img.alt;
-    // Floating modals bring their own shadow, so skip the white backing card
-    big.classList.toggle("lightbox__img--bare", !!img.closest(".figure--float"));
+    // Floating modals bring their own shadow, so skip the white backing card.
+    // A full-bleed screenshot among them (.carousel__slide--corner) keeps it.
+    big.classList.toggle("lightbox__img--bare", !!img.closest(".figure--float") && !img.closest(".carousel__slide--corner"));
     var text = captionFor(img);
     caption.textContent = text;
     caption.hidden = !text;
