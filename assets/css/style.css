@@ -523,6 +523,11 @@ main {
   color: var(--ink);
 }
 
+/* Client names on Home cards are a touch smaller than in the next-project nav */
+.project .project__name {
+  font-size: 22px;
+}
+
 .project__date {
   margin-top: 4px;
   color: var(--gray-400);
@@ -542,10 +547,9 @@ main {
 }
 
 .project__title {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.4;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.52;
   letter-spacing: -0.01em;
 }
 
