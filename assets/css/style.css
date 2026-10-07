@@ -1761,7 +1761,7 @@ a.item:hover::before {
    Large screens: content sits on a white card over a grey canvas
    -------------------------------------------------------------------------- */
 
-@media (min-width: 1920px) {
+@media (min-width: 1900px) {
   body {
     padding: 40px 0;
     background: var(--gray-100);
