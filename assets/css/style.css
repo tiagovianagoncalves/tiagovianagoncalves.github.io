@@ -965,10 +965,6 @@ a.item:hover::before {
   text-align: right;
 }
 
-.list.facts > li:last-child .item {
-  border-bottom: 1px solid var(--gray-100);
-}
-
 .facts + p {
   margin-top: 24px;
 }
