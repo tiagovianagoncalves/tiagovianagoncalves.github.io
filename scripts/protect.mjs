@@ -3,8 +3,9 @@
 // The readable source lives in private/ (git-ignored, never published). This
 // script encrypts its <main> content with AES-GCM, using a key derived from
 // the password with PBKDF2, and writes the published page with only the
-// encrypted data plus an unlock form (assets/js/unlock.js decrypts it in the
-// browser).
+// encrypted data plus a short note. The password is asked for in a modal on
+// the homepage (assets/js/locked-modal.js, which lists the protected slugs),
+// and assets/js/unlock.js decrypts the page in the browser.
 //
 // Usage: node scripts/protect.mjs <password> [slug]
 //   slug defaults to "intaker": reads private/<slug>.html,
@@ -49,13 +50,7 @@ const form = `
     <section class="locked">
       <a class="back" href="/"><span aria-hidden="true">←</span> Work</a>
       <h1 class="locked__title">This case study is password protected</h1>
-      <p class="locked__text">Enter the password you were given to read it.</p>
-      <form class="locked__form" data-unlock>
-        <label class="visually-hidden" for="locked-password">Password</label>
-        <input class="locked__input" id="locked-password" type="password" autocomplete="current-password" required>
-        <button class="pill locked__submit" type="submit" aria-label="Unlock"><span aria-hidden="true">→</span></button>
-      </form>
-      <p class="locked__error" role="alert" hidden>That password didn't work. Try again.</p>
+      <p class="locked__text">Open it from the homepage to enter the password.</p>
     </section>
     <script type="application/json" id="locked-data">${payload}</script>
   `;
